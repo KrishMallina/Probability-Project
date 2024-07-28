@@ -8,14 +8,17 @@ from cmath import *
 n = 0
 w = 0
 while n < 0:
-    x = 0
+    x = random.uniform(0, 0.2296)
     n += 1
     w += 3
     #Dial
-    x = 0.2296 * random()
+    
+    x =
     if x < 90:
         #to switchboard
-        w += x
+        w += 5
+        w += 240*u^(2/3)
+
 
     else:
         #hang-up
