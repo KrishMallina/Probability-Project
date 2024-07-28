@@ -1,6 +1,7 @@
 from numpy import *
 from cmath import *
 from discrete_random_var_gen import *
+from pandas import *
 """ n => number of dials
     x => wait time until reaching switchboard
     w => total wait time in sec
