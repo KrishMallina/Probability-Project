@@ -1,5 +1,6 @@
 from numpy import *
 from cmath import *
+from Discrete_Random_Var_Gen import *
 """ n => number of dials
     x => wait time until reaching switchboard
     w => total wait time in sec
@@ -12,7 +13,7 @@ while n < 0:
     n += 1
     w += 3
     #Dial
-    
+
     x =
     if x < 90:
         #to switchboard
