@@ -3,9 +3,7 @@ class rand_num_gen:
         self.a = a
         self.c = c
         self.K = K
-        self.x0 = seed
-
-        self.x_prev = (self.a*self.x0+self.c)%self.K
+        self.x_prev = seed
 
     def  generate(self):
         self.x_prev = (self.a*self.x_prev+self.c)%self.K
@@ -13,5 +11,5 @@ class rand_num_gen:
     
 K = 2**17
 lcg = rand_num_gen()
-for i in range(52):
+for i in range(3):
     print(lcg.generate()/K)
