@@ -63,9 +63,17 @@ df = DataFrame.from_dict(w_list, orient='index', columns=['u', 'w', 'n', 'agent'
 
 print(df)
 print(w_list['51'][0], w_list['52'][0], w_list['53'][0])
+
 # calculations, etc.
 w_500 = df['w']
 w_500_median = round(w_500.median(), 4)
 w_500_mean = round(w_500.mean(), 4)
 print(f'median = {w_500_median}, mean =  {w_500_mean}')
 df.to_csv('wait_time.csv')
+
+u2 = df['u']
+u_total = []
+for sublist in u2:
+    u_total.extend(sublist)
+print(u_total[51:54])
+
