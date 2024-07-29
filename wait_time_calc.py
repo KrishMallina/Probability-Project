@@ -12,8 +12,8 @@ from pandas import *
 """
 w_list = {}
 
-for i in range(0, 10):
-    n = 0
+for i in range(0, 20):
+    n = 1
     w = 0
     u = 0
     end = False
@@ -22,9 +22,9 @@ for i in range(0, 10):
     u_list = []
 
     #beginning of caller attempt
-    while n <= 3 or not end:
+    while n <= 3 and not ticket:
         # dial
-        n += 1
+
         w += 3
         u = random.uniform(0, 1)
         u_list.append(round(u, 4))
