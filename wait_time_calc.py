@@ -12,7 +12,7 @@ from pandas import *
 """
 w_list = {}
 
-for i in range(0, 20):
+for i in range(0, 500):
     n = 1
     w = 0
     u = 0
@@ -24,10 +24,10 @@ for i in range(0, 20):
     #beginning of caller attempt
     while n <= 3 and not ticket:
         # dial
-
         w += 3
         u = random.uniform(0, 1)
-        u_list.append(round(u, 4))
+        u = round(u, 4)
+        u_list.append(u)
         if u <= 0.7704:
             # reaches switchboard
             w += 5 + 240 * u ** (2 / 3)
@@ -44,18 +44,15 @@ for i in range(0, 20):
             else:
                 agent = 'Agent D'
             ticket = True
-            end = True
-            break
+
         else:
             # caller hangs up
             w += 2
-            agent = 'No agent reached'
+            if n == 3:
+                break
             n += 1
             ticket = False
-            if n >= 3:
-                break
-            else:
-                continue
+
 
     w = round(w, 4)
     u = round(u, 4)
@@ -65,4 +62,4 @@ for i in range(0, 20):
 df = DataFrame.from_dict(w_list, orient='index', columns=['u', 'w', 'n', 'agent', 'Ticket'])
 
 print(df)
-#print(w[51, 1], w[52, 1], w[53, 1],)
+print(w_list['51'][0], w_list['52'][0], w_list['53'][0])
