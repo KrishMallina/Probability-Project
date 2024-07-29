@@ -13,7 +13,7 @@ from pandas import *
 w_list = {}
 
 for i in range(0, 10):
-    n = 1
+    n = 0
     w = 0
     u = 0
     end = False
@@ -24,6 +24,7 @@ for i in range(0, 10):
     #beginning of caller attempt
     while n <= 3 or not end:
         # dial
+        n += 1
         w += 3
         u = random.uniform(0, 1)
         u_list.append(round(u, 4))
