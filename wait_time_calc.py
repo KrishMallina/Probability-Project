@@ -1,6 +1,7 @@
 from numpy import *
 from cmath import *
 from disc_rvg_test import *
+from numbergenerator import *
 from pandas import *
 """ n => number of dials
     x => wait time until reaching switchboard, used in disc_rvg
@@ -11,6 +12,8 @@ from pandas import *
         agent was reached (0 = no agent reached, 1 = agent A, 2 = agent B, 3 = agent C, 4 = agent D)
 """
 w_list = {}
+def ui():
+    return lcg.generate()/K
 
 for i in range(0, 500):
     n = 1
@@ -25,7 +28,7 @@ for i in range(0, 500):
     while n <= 3 and not ticket:
         # dial
         w += 3
-        u = random.uniform(0, 1)
+        u = ui()
         u = round(u, 4)
         u_list.append(u)
         if u <= 0.7704:
